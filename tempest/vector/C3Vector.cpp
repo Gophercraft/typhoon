@@ -29,6 +29,14 @@ C3Vector operator+(const C3Vector& l, const C3Vector& r) {
     return { x, y, z };
 }
 
+C3Vector operator*(const C3Vector& l, const C34Matrix& r) {
+    float x = l.x * r.a0 + l.y * r.b0 + l.z * r.c0 + r.d0
+    float y = l.x * r.a1 + l.y * r.b1 + l.z * r.c1 + r.d1
+    float z = l.x * r.a2 + l.y * r.b2 + l.z * r.c2 + r.d2
+
+    return { x, y, z };
+}
+
 bool operator!=(const C3Vector& l, const C3Vector& r) {
     return l.x != r.x || l.y != r.y || l.z != r.z;
 }
